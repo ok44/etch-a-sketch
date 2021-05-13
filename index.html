@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-a-Sketch</title>
+</head>
+<body>
+    <button id='clear'>Clear</button>
+    <div id='container'></div>
+    <script>
+        const clearButton = document.querySelector('#clear')
+        const container = document.querySelector('#container')
+        let rows = []
+        let cols = []
+        let counter = 1
+        let size = 8
+
+        for (let i = 1; i<=size; i++) {
+            for (let j = 1; j<=size; j++) {
+                rows[i] = document.createElement('div') 
+                counter += 1
+                container.appendChild(rows[i])
+                rows[i].style.display = 'inline-block'
+                rows[i].className = 'mydiv'
+            }
+        } 
+
+        const turnBlackEvent = document.querySelectorAll('.mydiv')
+        const turnBlackEventLength = turnBlackEvent.length
+        for (let k=0; k<turnBlackEventLength; k++) {
+            turnBlackEvent[k].addEventListener('mouseover', function(){
+                turnBlackEvent[k].classList.add('blackdiv')
+            })
+        }
+
+        clearButton.addEventListener('click', function() {
+            for (let l=0; l<turnBlackEventLength; l++) {
+                turnBlackEvent[l].classList.remove('blackdiv')
+            }
+        })
+
+    </script>
+    <style>
+        .mydiv {
+            font-size: 20px;
+            color: black;
+            width: 12.5%;
+            height: 170px;
+            box-sizing: border-box;
+            border-style: solid;
+            border-width: 0.5px;
+            
+        }
+
+        #container {
+            width: 50%;
+            height: auto;
+        }
+
+        .blackdiv {
+            background-color: black;
+        }
+
+        button {
+            font-size: 30px;
+        }
+
+    </style>
+</body>
+</html>
