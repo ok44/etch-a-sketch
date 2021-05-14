@@ -1,0 +1,41 @@
+.mydiv {
+    color: transparent;
+    width: 40px;
+    height: 40px;  
+}
+
+#container {
+    width: 1600px;
+    height: 1600px;
+    text-align: center;
+    border-style: solid;
+    background-color: white;
+    margin: 0 auto;
+}
+
+#buttoncontainer {
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 20px;
+
+
+}
+
+.blackdiv {
+    background-color: black;
+}
+
+button {
+    font-size: 30px;
+    text-align: center;
+}
+
+body {
+    background-color: grey;
+}
+
+h1 {
+    font-size: 60px;
+    text-align: center;
+
+}
